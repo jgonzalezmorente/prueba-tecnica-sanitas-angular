@@ -1,0 +1,76 @@
+$bg-color: #424242;
+$hl-color: #2196F3;
+$muted-color: mix(white, $bg-color, 70%);
+$trans-time: 300ms;
+$width: 100%;
+
+.group {
+  position: relative;
+  margin-bottom: 2rem;   
+}
+
+input {
+  background: none;
+  letter-spacing: 0.1rem;
+  color:  rgba(black, 0.7);
+  font-size: 1.8rem;
+  margin-top: 1rem;
+  padding: 2rem 1rem 1.5rem 0.5rem;
+  display: block;
+  width: $width;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid $muted-color;
+  &:focus {
+    outline: none;
+  }  
+  &:focus ~ label, 
+  &:valid ~ label {
+    top: -1rem;
+    font-size: 1.3rem;
+    color: $hl-color;
+    .icon {
+      font-size: 1.5rem;
+      margin-right: 0.5rem;
+    }
+  }
+  &:focus ~ .bar:before {
+    width: $width;
+  }
+}
+
+.icon {
+    font-size: 2rem;
+    margin-right: 1rem;
+}
+
+label {
+  color: $muted-color;  
+  font-size: 1.6rem;  
+  font-weight: 600;
+  position: absolute;
+  pointer-events: none;
+  left: 0.5rem;
+  top: 1rem;
+  transition: $trans-time ease all;
+}
+
+.bar {
+  position: relative;
+  display: block;
+  width: $width;
+  &:before {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 0px;
+    position: absolute;
+    background: $hl-color;
+    transition: $trans-time ease all;
+    left: 0%;
+  }
+}
+
+input[type="password"] {
+  letter-spacing: 0.5rem;
+}
