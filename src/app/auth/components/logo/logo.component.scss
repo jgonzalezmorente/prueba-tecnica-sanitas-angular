@@ -1,0 +1,11 @@
+.logo {
+    overflow: hidden;    
+    display: flex;    
+    border-radius: var(--border-radius);
+    
+    img {
+        border-radius: var(--border-radius);
+        max-width: 150%;
+        margin: 0 1rem;
+    }
+  }

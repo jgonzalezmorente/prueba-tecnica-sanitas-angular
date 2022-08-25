@@ -1,44 +1,42 @@
+<div class = "container animated">    
 
-<div class = "container">
+    <app-logo *ngIf="smallScreen"></app-logo>
 
-    <div class = "logo"
-         *ngIf = "smallScreen">
-        <img src="assets/logo.jpg" alt="">
-    </div>
+    <form class        = "login-form animated" 
+          autocomplete = "off"
+          [formGroup]  = "loginForm"
+          (ngSubmit)   = "login()">
 
-    <form class="login-form">
-        
         <div class="login-fields">
 
-            <div *ngIf  = "!smallScreen" 
-                  class = "title">
-
-                <div class="logo">
-                    <img src="assets/logo.jpg" alt="">
-                </div>                  
-
-                <h3>Prueba técnica</h3>
-
-            </div>
+            <app-title *ngIf ="!smallScreen"></app-title>
 
             <app-material-input label = "Email"
-                                icon  = "bi bi-person"></app-material-input>
-                    
+                                icon  = "bi bi-person"
+                                name  = "email"></app-material-input>
+
+            <div error-msg [message] = "errorMsgEmail"
+                           [valid]   = "!hasError('email')">
+            </div>                                
+
             <app-material-input type  = "password"
                                 label = "Contraseña"
-                                icon  = "bi bi-shield-lock"></app-material-input>
-                
-            <app-toggle-switch label = "Recordar"></app-toggle-switch>
+                                icon  = "bi bi-shield-lock"
+                                name  = "password"></app-material-input>
 
-            <div *ngIf  = "!smallScreen"
-                  class ="container-btn">
-                <input  class="btn" type="submit" value="Acceder">            
-            </div>            
+            <div error-msg message = "La contraseña debe tener al menos cinco caracteres."
+                           [valid] = "!hasError('password')">
+            </div>                                 
+
+            <app-toggle-switch label = "Recordar"
+                               name  = "remindMe"></app-toggle-switch>
+
+            <app-btn-desktop *ngIf = "!smallScreen"></app-btn-desktop>
 
         </div>
-        
-        <input *ngIf="smallScreen" class="btn" type="submit" value="Acceder">
-        
+
+        <app-btn-mobile *ngIf="smallScreen"></app-btn-mobile>
+
     </form>
     
 </div>

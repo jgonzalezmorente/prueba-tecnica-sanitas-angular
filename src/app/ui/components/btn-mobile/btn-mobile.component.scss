@@ -1,0 +1,21 @@
+.btn {
+    background-color: var(--primary-color);
+    width: 100%;
+    height: var(--height-btn-mobile);
+    display: block;
+    color: var(--button-text-color);
+    font-size: 1.7rem;
+    font-weight: 600;
+    padding: 1rem;
+    transition: background-color .3s ease-out;
+    text-align: center;
+    border: none;    
+    border-bottom-left-radius: var(--border-radius);;
+    border-bottom-right-radius: var(--border-radius);;
+    
+    &:hover {
+      background-color: var(--primary-color-accent);
+      cursor: pointer
+    }
+  
+  }

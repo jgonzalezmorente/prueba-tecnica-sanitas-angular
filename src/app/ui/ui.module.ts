@@ -2,7 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MaterialInputComponent } from './components/material-input/material-input.component';
 import { ToggleSwitchComponent } from './components/toggle-switch/toggle-switch.component';
-import { ButtonComponent } from './components/button/button.component';
+import { BtnMobileComponent } from './components/btn-mobile/btn-mobile.component';
+import { BtnDesktopComponent } from './components/btn-desktop/btn-desktop.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -10,15 +12,18 @@ import { ButtonComponent } from './components/button/button.component';
   declarations: [
     MaterialInputComponent,
     ToggleSwitchComponent,
-    ButtonComponent
+    BtnMobileComponent,
+    BtnDesktopComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule
   ],
   exports: [
     MaterialInputComponent,
     ToggleSwitchComponent,
-    ButtonComponent,
+    BtnMobileComponent,
+    BtnDesktopComponent
   ]
 })
 export class UiModule { }

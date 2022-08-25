@@ -12,8 +12,8 @@
         height: 0;
 
         &:checked + .slider {
-            background-color: #2196F3;
-            box-shadow: 0 0 0.3rem #2196F3;
+            background-color: var(--primary-color);
+            box-shadow: 0 0 0.3rem var(--primary-color);
         }
 
         &:checked + .slider:before {
@@ -29,7 +29,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: #D8D8D8;
+        background-color: var(--color-switch-off);
         transition: .4s;
         border-radius: 34px;
         height: 1.8rem;
@@ -43,13 +43,11 @@
             width: 26px;
             left: -0.5rem;
             top: -0.4rem;            
-            background-color: #B1B1B1;    
+            background-color: var(--color-switch-off-accent);
             transition: .4s;
             border-radius: 50%;
         }
-
     }
-
 }
 
 .reminder{
